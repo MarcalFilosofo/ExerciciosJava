@@ -1,0 +1,21 @@
+package oo.composicao.desafio;
+
+public class Sistema {
+	public static void main(String[] args) {
+		
+		
+		Compra compra1 = new Compra();
+		compra1.adicionarItem("Caneta", 9.67, 100);
+		compra1.adicionarItem(new Produto("Notebook", 1897.77), 2);
+		
+		Compra compra2 = new Compra();
+		compra2.adicionarItem("Borracha", 0.5, 5);
+		compra2.adicionarItem(new Produto("Lapis", 0.75), 10);
+		
+		Cliente cliente = new Cliente("Guigui");
+		cliente.adicionarCompra(compra1);
+		cliente.adicionarCompra(compra2);
+		
+		System.out.println(cliente.obterValorTotal());
+	}
+}	
